@@ -1,0 +1,31 @@
+.container{
+    display: grid;
+    grid-template-rows: 1fr,9fr;
+    position: fixed;
+}
+
+    .header{
+        grid-row: 1/2;
+        grid-column: 1/2;
+        background-color: brown;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+        .header > *{
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        .header button{
+            height: 32px;
+        }
+
+    .content{
+        grid-row:2/3;
+        background-color: bisque;
+    }
+
+    .footer{
+        background-color: aquamarine;
+    }
