@@ -1,6 +1,43 @@
+.popup{
+    position: absolute;
+    z-index: 15;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .game-entry{
+        background-color: darkmagenta;
+        width: 300px;
+        height: 400px;
+        position: absolute;
+        text-align: center;
+
+    }
+        .game-entry > h3{
+
+            padding: 16px;
+        }
+        .form-list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 370px;
+        }
+
+            .form-list > li{
+                margin: 8px;
+            }
+                .form-list >li >input{
+                }
+
 .container{
+    width: 100vw;
+    height: 100vh;
     display: grid;
-    grid-template-rows: 1fr,9fr;
+    grid-template-rows: 1fr 9fr .5fr;
     position: fixed;
 }
 
@@ -24,8 +61,64 @@
     .content{
         grid-row:2/3;
         background-color: bisque;
+        display: grid;
+        grid-template-rows: 50px 1fr;
     }
+        .content > h3{
+           text-align: center; 
+           align-self: center;
+        }
 
+        .library-cards{
+            background-color: rgb(65, 42, 165);
+            margin-top: 8px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+        }
+            .library-card{
+                margin: 8px;
+                background-color: coral;
+                height: 250px;
+                display: flex;
+                flex-direction: column;
+            }
+                .library-card > *{
+                    margin: 8px;
+                }
+                .library-card > p{
+                    text-align: center;
+                    align-self: center;
+                }
+
+                .library-card{
+                    background-color: aqua;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+
+                    .card-info{
+
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                        .text-info > p{
+                            margin: 12px;
+                        }
+                        .card-info > img{
+                            width: 80px;
+                            height: 96px;
+                            margin-right: 32px;
+                        }
+
+                    .card-buttons{
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                        .card-buttons > button{
+                            margin: 8px;
+                        }
     .footer{
         background-color: aquamarine;
     }

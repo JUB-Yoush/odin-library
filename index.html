@@ -5,17 +5,112 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
     <title>Library</title>
 </head>
 <body>
-    
+
+    <div class="popup" id="popup">
+        <div class="game-entry">
+            <form id="game-entry-form" action="game-entry-form" method>
+
+                <h3>Add Book</h3>
+                <ul class="form-list">
+                    <li>
+                        <input id="title-input" type="text" placeholder="Title">
+                    </li>
+                    <li>
+                        <input id="genre-input" type="text" placeholder="Genre">
+                    </li>
+                    <li>
+                        <input id="year-input" type="text" placeholder="Release Year">
+                    </li>
+                    <li>
+                        <input id="boxart-input" type="text" placeholder="Boxart Link">
+                    </li>
+                    <li>
+                        <label for="has-played">Have you played it?</label><input type="checkbox" name="have-played" id="has-played">
+                    </li>
+                    <li class="button">
+                        <button id="submit-btn" type="submit">Add to Library</button>
+                    </li>
+                </ul>
+
+            </form>
+        </div>
+    </div>
+
     <div class="container">
         <div class="header">
             <h1 class="title">video game library</h1>
             <button>Add Game</button>
         </div>
         <div class="content">
-            <h3>Your Library</h3>
+                <h3>Your Library</h3>
+                <div class="library-cards" id="library-cards">
+                    
+                    <div class="library-card">
+                        <div class="card-info">
+                            <div class="text-info">
+                                <p>title</p>
+                                <p>platforms</p>
+                                <p>2022</p>
+                            </div>
+                            <img src="https://placekitten.com/400/500" alt="game boxart">
+                        </div>
+                        <div class="card-buttons">
+                            <button>Played</button>
+                            <button>removed</button>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="library-card">
+                        <div class="card-info">
+                            <div class="text-info">
+                                <p>title</p>
+                                <p>platforms</p>
+                                <p>2022</p>
+                            </div>
+                            <img src="https://placekitten.com/400/500" alt="game boxart">
+                        </div>
+                        <div class="card-buttons">
+                            <button>Played</button>
+                            <button>removed</button>
+                        </div>
+                    </div>
+
+                    <div class="library-card">
+                        <div class="card-info">
+                            <div class="text-info">
+                                <p>title</p>
+                                <p>platforms</p>
+                                <p>2022</p>
+                            </div>
+                            <img src="https://placekitten.com/400/500" alt="game boxart">
+                        </div>
+                        <div class="card-buttons">
+                            <button>Played</button>
+                            <button>removed</button>
+                        </div>
+                    </div>
+
+                    <div class="library-card">
+                        <div class="card-info">
+                            <div class="text-info">
+                                <p>title</p>
+                                <p>platforms</p>
+                                <p>2022</p>
+                            </div>
+                            <img src="https://placekitten.com/400/500" alt="game boxart">
+                        </div>
+                        <div class="card-buttons">
+                            <button>Played</button>
+                            <button>removed</button>
+                        </div>
+                    </div>
+                </div>
+
         </div>
         <div class="footer">
         <p>made by Yoush</p>
