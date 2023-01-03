@@ -2,6 +2,7 @@ let myLibrary = [];
 
 function Book(title,genre,year,boxart,played){
     //book constructor
+    this.gameID = myLibrary.length 
     this.title = title
     this.genre = genre
     this.year = year
@@ -9,16 +10,22 @@ function Book(title,genre,year,boxart,played){
     this.played = played
 }
 
-function addBookToLibrary(){
-    
+function addBookToLibrary(newBook){
+    myLibrary.push(newBook)
+    displayLibrary()
 }
 
 
 function displayLibrary(){
+
+    let libraryCards = document.getElementById('library-cards')
+    libraryCards.innerHTML = ''
+
     myLibrary.forEach(book => {
         // make the book markup and add it to the page
         let libraryCard = document.createElement('div')
         libraryCard.classList.add("library-card")
+        libraryCard.setAttribute('id',book.gameID)
 
         let cardInfo = document.createElement('div')
         cardInfo.classList.add('card-info')
@@ -36,7 +43,9 @@ function displayLibrary(){
         let boxartTag = document.createElement('img')
 
         let playedBtn = document.createElement('button')
+        playedBtn.onclick = function(){togglePlayed(book)}
         let removeBtn = document.createElement('button')
+        removeBtn.onclick = function(){removeCard(book)}
 
         // add values based on book
         titleTag.textContent = book.title
@@ -65,31 +74,56 @@ function displayLibrary(){
 
         libraryCard.appendChild(cardButtons)
 
-        let libraryCards = document.getElementById('library-cards')
         libraryCards.appendChild(libraryCard)
     
     });
-    console.log('done?')
 }
 
+
 let addBookBtn = document.getElementById('submit-btn')
+let formcloseBtn = document.getElementById('form-close')
+
+formcloseBtn.onclick = function(){
+    document.getElementById('popup').style.display = "none"
+    event.preventDefault();
+}
+
+let openPopup = document.querySelector(".header > button")
+openPopup.onclick = function(){
+
+    document.getElementById('popup').style.display = "flex"
+    event.preventDefault();
+}
 
 addBookBtn.onclick = function(){
     let newBook = new Book(
-        document.getElementById('title-input').textContent,
-        document.getElementById('genre-input').textContent,
-        document.getElementById('year-input').textContent,
-        document.getElementById('boxart-input').textContent,
-
-        //finish making the book maker
+        document.getElementById('title-input').value,
+        document.getElementById('genre-input').value,
+        document.getElementById('year-input').value,
+        document.getElementById('boxart-input').value,
+        document.getElementById('has-played').checked
     )
-    addBookToLibrary()
+    console.log(newBook)
+
+    
+    addBookToLibrary(newBook)
+    console.log("among")
     event.preventDefault();
 };
 
-let testBook = new Book("spunky","evil game", "2020","https://placekitten.com/400/500",true)
-let testBook2 = new Book("spunky 2","evil game", "2021","https://placekitten.com/450/600",true)
-myLibrary.push(testBook2)
-myLibrary.push(testBook)
+function removeCard(book){
+    console.log(book)
+    delete myLibrary[book.gameID]
+    displayLibrary()
+}
+function togglePlayed(book){
+    console.log(book)
+    book.played = !book.played
+    displayLibrary()
+}
+
 displayLibrary()
 
+/*todo:
+form validation
+*/

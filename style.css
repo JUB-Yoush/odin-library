@@ -1,3 +1,6 @@
+* > button{
+	font-family: 'Courier New', Courier, monospace;
+}
 .popup{
     position: absolute;
     z-index: 15;
@@ -8,7 +11,8 @@
     align-items: center;
 }
     .game-entry{
-        background-color: darkmagenta;
+        border-radius: 10px;
+        background-color: #155E75;
         width: 300px;
         height: 400px;
         position: absolute;
@@ -19,6 +23,22 @@
 
             padding: 16px;
         }
+        .form-header{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+            .form-header > h3{
+                margin: 16px;
+                flex-grow:2;
+            }
+            .form-header > button{
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin: 8px;
+                border: none;
+                background-color: #155E75;
+            }
         .form-list{
             display: flex;
             flex-direction: column;
@@ -32,6 +52,9 @@
             }
                 .form-list >li >input{
                 }
+                .form-list >li>button{
+                    margin-bottom: 8px;
+                }
 
 .container{
     width: 100vw;
@@ -44,7 +67,7 @@
     .header{
         grid-row: 1/2;
         grid-column: 1/2;
-        background-color: brown;
+        background-color:#155E75;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -70,10 +93,10 @@
         }
 
         .library-cards{
-            background-color: rgb(65, 42, 165);
+            background-color: #ffedd5
             margin-top: 8px;
             display: grid;
-            grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
         }
             .library-card{
                 margin: 8px;
@@ -91,10 +114,12 @@
                 }
 
                 .library-card{
-                    background-color: aqua;
                     display: flex;
+                    background-color: #FDBA74;
                     flex-direction: column;
                     justify-content: space-between;
+                    border-radius: 10px;
+                    border-left: 8px solid #155E75;
                 }
 
                     .card-info{
@@ -120,5 +145,8 @@
                             margin: 8px;
                         }
     .footer{
-        background-color: aquamarine;
+        background-color: #155E75;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }

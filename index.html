@@ -12,10 +12,13 @@
 
     <div class="popup" id="popup">
         <div class="game-entry">
-            <form id="game-entry-form" action="game-entry-form" method>
+            <form id="game-entry-form">
+                <div class="form-header">
+                    <button id="form-close">x</button>
+                </div>
 
-                <h3>Add Book</h3>
                 <ul class="form-list">
+                    <h3>Add Game</h3>
                     <li>
                         <input id="title-input" type="text" placeholder="Title">
                     </li>
@@ -32,7 +35,7 @@
                         <label for="has-played">Have you played it?</label><input type="checkbox" name="have-played" id="has-played">
                     </li>
                     <li class="button">
-                        <button id="submit-btn" type="submit">Add to Library</button>
+                        <button id="submit-btn">Add to Library</button>
                     </li>
                 </ul>
 
